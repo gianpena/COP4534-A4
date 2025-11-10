@@ -4,13 +4,11 @@ Mridul Pahwa, mpahw002@fiu.edu, 6401630
 
 ## Running strassen
 ```sh
-cd ./strassen
-./grade.sh
+./grade.sh strassen
 ```
 
 ## Running dictionary
 ```sh
-cd ./dictionary
-./grade.sh
+./grade.sh dictionary
 ```
 
