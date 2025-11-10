@@ -12,3 +12,7 @@ Mridul Pahwa, mpahw002@fiu.edu, 6401630
 ./grade.sh dictionary
 ```
 
+## Running phonebook
+```sh
+./grade.sh phonebook
+```
