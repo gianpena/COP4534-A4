@@ -1,0 +1,26 @@
+Optimality analysis (why binary search)
+Problem type: Dictionary word lookup (find the index of a word in
+a sorted list).
+Greedy rationale: Binary search repeatedly selects the middle element of the
+current search interval and eliminates half of the remaining elements based
+on comparison with the target. This works because the list is sorted:
+if the target is less than the middle element, it must be in the left half;
+if greater, it must be in the right half. Each local choice safely reduces
+the search space without missing the target, guaranteeing that the correct
+index is found or confirmed absent.
+
+Complexity:
+	•	Reading the dictionary: O(N * L) time, O(N * L) space, where N is the
+    number of words and L is the average word length.
+	•	Binary search lookup: O(L * log N) time, O(log N) space for recursion.
+	•	Input processing and output: O(L) time and space.
+	•	Overall: O(N * L + L * log N) time, O(N * L + log N) space.
+
+Limitations:
+	•	The algorithm requires the dictionary to be sorted; otherwise,
+    binary search fails.
+	•	Recursion depth is limited by the stack; for extremely large
+    dictionaries, an iterative binary search may be safer.
+	•	Searching for multiple words individually is less efficient than
+    preprocessing with a hash table, which allows O(L) lookup per word but
+    requires extra memory.
