@@ -1,0 +1,21 @@
+Optimality analysis (why merge sort)
+Problem type: Sorting a list of entries by a chosen key (either name or number).
+Greedy rationale: Merge sort works by recursively dividing the list into halves,
+sorting each half, and merging the sorted halves. The local choice of merging
+the smallest remaining elements from each half preserves the global order,
+ensuring correctness. By always combining two sorted sublists into a larger
+sorted list, the algorithm guarantees that the final merged list is fully sorted.
+
+Complexity:
+	•	Splitting the list: O(log N) levels of recursion, where N is the number
+    of entries.
+	•	Merging two lists of total length M: O(M) per merge step.
+	•	Overall: O(N log N) time, O(N) space for the recursion and merged lists.
+
+Limitations:
+	•	Merge sort requires additional memory proportional to the list size for
+    the merged results.
+	•	For very large datasets, in-place or iterative sorting may be preferred
+    to reduce recursion stack usage.
+	•	Sorting by a key that involves expensive computation (e.g., a complex
+    lambda) increases the constant factor of the time complexity.

@@ -1,0 +1,23 @@
+Optimality analysis
+Problem type: Square matrix multiplication (size n × n)
+Greedy rationale: Strassen’s algorithm reduces the number of recursive
+multiplications from 8 (in standard divide-and-conquer) to 7 by computing
+cleverly combined submatrix products (M1–M7). Each local choice of combining
+submatrices ensures that all elements of the final product are correctly
+computed. This reduction is safe because linear combinations of submatrices
+preserve the matrix product identity, guaranteeing correctness while decreasing
+recursive calls.
+
+Complexity:
+	•	Recursive multiplications: T(n) = 7·T(n/2) + O(n²) for matrix addition/subtraction.
+	•	Using the Master Theorem: T(n) = O(n^log₂7) ≈ O(n^2.807).
+	•	Space complexity: O(n²) for storing submatrices and the final product at
+    each recursion level.
+
+Limitations:
+	•	Works only for square matrices of dimensions that are powers of 2;
+    otherwise, padding is required.
+	•	Overhead from slicing submatrices and repeated additions can dominate
+    for small matrices; classical O(n³) multiplication can be faster for small n.
+	•	Recursive depth is log₂n, which could be a concern for very large
+    matrices in languages with limited recursion stack.
